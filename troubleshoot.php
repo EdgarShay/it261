@@ -8,7 +8,7 @@
     <link href="css/styles.css" type="text/css"
     rel="stylesheet">
 </head>
-<body class="troubleshoot">
+<body class="Troubleshoot">
 <h1><a href="index.php">Edgar's Portal Page</a></h1>
 <h2>The navigation below represents our Big 
 Assignments. </h2>
@@ -33,7 +33,7 @@ Assignments. </h2>
 <main>
 
 <h2>About Edgar</h2>
-<img class="right" src="images/Edgar.jpg" alt="My-image">
+<img class="right" src="images/edgar.jpg" alt="My-image">
 
 <p>Hello my name is Edgar Vargas. I moved to Seattle from Puerto Vallarta, Mexico 
 almost eight years ago. My first language is Spanish. This is my fifth Web Develepment class
@@ -44,8 +44,8 @@ Besides my education I have two real passions. The first is spending time with m
 The other passion is to working out in the gym.  </p>
 <div class="container">
 <img class="left" src="images/screenshot.jpg" alt="MAMP">
-<img class="left" src="images/screenshot.2.jpg" alt="MAMP">
-<img class="left" src="images/screenshot.3.jpg" alt="MAMP">
+<img class="left" src="images/screenshot.2.jpg" alt="MAMP-display-errors">
+<img class="left" src="images/screenshot.3.jpg" alt="MAMP-local-host-error">
 </div>
 </main>
 
