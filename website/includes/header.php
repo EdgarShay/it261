@@ -56,87 +56,101 @@ switch($today) {
 
 case 'Saturday';
 $actDay = 'black';
-$day = 'Saturday is Dexter Day';
-$details = 'Dexter Morgan ia a Miami-based blood
-splatter expert who doesn\'t just solve murders;
-he commits them too. In fact, he\'s a serial killer --
-but he only murders the guilty, so he feels justified 
-with his lifestyle choices. His policewoman sister 
-and his cop co-workers have no idea that Dexter lives
-a double life; howeever, adoptive fathers harrys 
-knows his secret, and does, in fact, help Dexter
-with his skills. " It\'s a unique brand of justice
-for which charming Dexter feels a psychological
-hunger.';
-$picture = 'dexter.jpg';
-$altTag = 'Dexter';
-$background2 = 'blood';
-
+$day = 'Saturday is Bruce Wayne Day';
+$details = 'A young Bruce Wayne (Christian Bale) travels to 
+the Far East, where he\'s trained in the martial arts 
+by Henri Ducard (Liam Neeson), a member of the mysterious 
+League of Shadows. When Ducard reveals the League\'s true 
+purpose -- the complete destruction of Gotham City -- 
+Wayne returns to Gotham intent on cleaning up the city 
+without resorting to murder. With the help of Alfred 
+(Michael Caine), his loyal butler, and Lucius Fox 
+(Morgan Freeman), a tech expert at Wayne Enterprises, 
+Batman is born.';
+$picture = 'bruze-wayne.jpg';
+$altTag = 'bruze Wayne';
+$background2 = 'Batman';
 break;
 
 case 'Sunday';
-$actDay = 'orange';
-$day = 'Sunday is reserved for homeland';
-$details = 'Homeland is a show on Showtime
-about whatever. the main character is Clair
-Danes.... etec';
-$picture = 'carrie.jpg';
-$altTag = 'Carrie';
-$background2 = 'Homeland';
+$actDay = 'green';
+$day = 'Sunday is reserved for Superman';
+$details = 'Just before the destruction of the planet Krypton, 
+scientist Jor-El (Marlon Brando) sends his infant 
+son Kal-El on a spaceship to Earth. Raised by kindly 
+farmers Jonathan (Glenn Ford) and Martha Kent (Phyllis Thaxter), 
+young Clark (Christopher Reeve) discovers the source 
+of his superhuman powers and moves to 
+Metropolis to fight evil.';
+$picture = 'christopher.jpg';
+$altTag = 'Christopher Reeve';
+$background2 = 'Superman';
 break;
 
 case 'Monday';
 $actDay = 'green';
-$day = 'Monday is reserved for Succession';
-$details = 'Succession is a show on Showtime
-about whatever. This series is based on the
-Murdock Family';
-$picture = 'succession.jpg';
-$altTag = 'Succession';
-$background2 = 'money';
+$day = 'Monday is reserved for Leyends Of The Fall';
+$details = 'In early 20th-century Montana, Col. 
+William Ludlow (Anthony Hopkins) lives in the wilderness
+with his sons, Tristan (Brad Pitt), Alfred (Aidan Quinn) 
+and Samuel (Henry Thomas). Eventually, the unconventional 
+but close-knit family encounters tragedy when Samuel is 
+killed in World War I.';
+$picture = 'leyends.jpg';
+$altTag = 'Brad Pitt';
+$background2 = 'Leyends Of The Fall';
 break;
 
 case 'Tuesday';
 $actDay = 'purple';
-$day = 'Tuesday is reserved for Watchmen';
-$details = 'Watchmen is an American dystopian 
-superhero drama limited television series based on
-the 1986 DC Comics series of the same title, created
-by Alan Moore and Dave Gibbons. The TV series was
-created for HBO by Damon Lindelof, who also reserved
-as an executive producer and writer.';
-$picture = 'regina.jpg';
-$background2 = '';
-$altTag = 'Regina';
+$day = 'Tuesday is reserved for Far and Away';
+$details ='Joseph (Tom Cruise) and his landlord\'s daughter, 
+Shannon (Nicole Kidman), travel from Ireland to America 
+in hopes of claiming free land in Oklahoma. 
+The pair get sidetracked in Boston, where Joseph 
+takes up boxing to support himself. 
+When he loses a pivotal fight, the two are left penniless.';
+$picture = 'tom.jpg';
+$background2 = 'Far and Away';
+$altTag = 'Tom Cruise';
 break;
 
 case 'Wednesday';
 $actDay = 'green';
-$day = 'Wednesday is reserved for the Loudest Voice';
-$details = 'Roger Ailes and his Network...etc';
-$picture = 'russell.jpg';
-$background2 = '';
-$altTag = 'Russell';
+$day = 'Wednesday is reserved for Eyes Wide Shut';
+$details = 'After Dr. Bill Hartford\'s (Tom Cruise) wife, 
+Alice (Nicole Kidman), admits to having sexual fantasies 
+about a man she met, Bill becomes obsessed 
+with having a sexual encounter. He discovers an 
+underground sexual group and attends one of their 
+meetings -- and quickly discovers that he is in over his head.';
+$picture = 'nicole.jpg';
+$background2 = 'Eyes Wide Shut';
+$altTag = 'Nicole Kidman';
 break;
 
 case 'Thursday';
-$actDay = 'orange';
-$day = 'Thursday is reserved for the Night of';
-$details = 'intense drama of what happens
-if you are in the wrong place and the wrong time!';
-$picture = 'night.jpg';
-$altTag = 'The night of';
-$background2 = '';
+$actDay = 'red';
+$day = 'Thursday is reserved for Lion';
+$details = 'Five year old Saroo gets lost on a train 
+which takes him thousands of miles across India, 
+away from home and family. Saroo must learn to survive 
+alone in Kolkata, before ultimately being adopted 
+by an Australian couple.';
+$picture = 'devpatel.jpg';
+$altTag = 'Dev patel';
+$background2 = 'Lion';
 break;
 
 case 'Friday';
 $actDay = 'red';
-$day = 'Friday is reserved for the Undoing';
-$details = 'Nicole Kidman and Hugh Grant star in this
-limited series of "who done it...?';
-$picture = 'nicole.jpg';
-$altTag = 'Nicole';
-$background2 = '';
+$day = 'Friday is reserved for Apocalypto';
+$details = 'The Mayan kingdom is at the height of its 
+opulence and power but the foundations of the empire 
+are beginning to crumble.';
+$picture = 'apocalypto.jpg';
+$altTag = 'Rudy Youngblood';
+$background2 = 'Apocalypto';
 break;
 
 }
