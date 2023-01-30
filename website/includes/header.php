@@ -89,16 +89,16 @@ break;
 
 case 'Monday';
 $actDay = 'green';
-$day = 'Monday is reserved for Leyends Of The Fall';
+$day = 'Monday is reserved for Legends Of The Fall';
 $details = 'In early 20th-century Montana, Col. 
 William Ludlow (Anthony Hopkins) lives in the wilderness
 with his sons, Tristan (Brad Pitt), Alfred (Aidan Quinn) 
 and Samuel (Henry Thomas). Eventually, the unconventional 
 but close-knit family encounters tragedy when Samuel is 
 killed in World War I.';
-$picture = 'leyends.jpg';
+$picture = 'legends.jpg';
 $altTag = 'Brad Pitt';
-$background2 = 'Leyends Of The Fall';
+$background2 = 'Legends Of The Fall';
 break;
 
 case 'Tuesday';
@@ -211,3 +211,9 @@ foreach($nav as $key => $value) {
 </div>
 
 </header>
+
+
+
+
+
+
