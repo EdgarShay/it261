@@ -1,17 +1,3 @@
-
-<?php
-$days = array(
-    "Sunday" => "christopher.jpg",
-    "Monday" => "leyends.jpg",
-    "Tuesday" => "tom.jpg",
-    "Wednesday" => "nicole.jpg",
-    "Thursday" => "devpatel.jpg",
-    "Friday" => "apocalypto.jpg",
-    "Saturday" => "bruze-wayne.jpg"
-);
-?> 
- 
-
 <?php include('./includes/header.php'); ?>
 
 <!DOCTYPE html>
@@ -20,7 +6,7 @@ $days = array(
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch Classwork Exercise</title>
+    <title>Daily Page</title>
     <style>
 * {
     padding:0;
@@ -57,14 +43,10 @@ aside {
     float:right;
 }
 
-
-
-
-
 </style>
 
 </head>
-<body>
+<body> 
 <div id="wrapper">
 
 <!-- <div id="hero">
@@ -88,6 +70,20 @@ nulla pariatur.</p>
 <p>Succession is a show on Showtime about whatever.
 This series is based on the Murdock Family.</p> -->
 
+<?php
+
+$days = array(
+    "Sunday" => "christopher.jpg",
+    "Monday" => "legends.jpg",
+    "Tuesday" => "tom.jpg",
+    "Wednesday" => "nicole.jpg",
+    "Thursday" => "devpatel.jpg",
+    "Friday" => "apocalypto.jpg",
+    "Saturday" => "bruze-wayne.jpg"
+);
+?> 
+
+
 <h2 class="<?php echo $actDay ;?> "><?php echo $day; ?></h2>
 <p><?php echo $details; ?></p>
 <h2>Don't see your favorite show? Check out 
@@ -97,60 +93,67 @@ the days below!</h2>
 <li><a style="color:<?php
 if($today == 'Sunday' ) {
     echo 'green';
-    } else{
+    } else {
     echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Sunday">Sunday</a></li>
+    }
+    ?>" href="daily.php?today=Sunday">Sunday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Monday' ) {
     echo 'green';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Monday">Monday</a></li>
+    }
+    ?>" href="daily.php?today=Monday">Monday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Tuesday' ) {
     echo 'black';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Tuesday">Tuesday</a></li>
+    }
+    ?>" href="daily.php?today=Tuesday">Tuesday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Wednesday' ) {
     echo 'green';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Wednesday">Wednesday</a></li>
+    }  
+    ?>" href="daily.php?today=Wednesday">Wednesday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Thursday' ) {
     echo 'red';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Thursday">Thursday</a></li>
+    } 
+    ?>" href="daily.php?today=Thursday">Thursday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Friday' ) {
     echo 'red';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Friday">Friday</a></li>
+    } 
+    ?>" href="daily.php?today=Friday">Friday</a></li>
+
 
 <li><a style="color:<?php
 if($today == 'Saturday' ) {
     echo 'purple';
-    } else{
+    } else {
         echo 'blue';
-    } ; ?>" href="daily.php?
-    today=Saturday">Saturday</a></li>
+    } 
+    ?>" href="daily.php?today=Saturday">Saturday</a></li>
 
 </ul>
+
 
 </main>
 
@@ -180,6 +183,8 @@ nulla pariatur.</p> -->
 </footer> -->
 <!--end wrapper-->
 </div> 
+</body>
+</html>
 
 <?php
 include('./includes/footer.php');
