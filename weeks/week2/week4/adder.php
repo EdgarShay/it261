@@ -1,21 +1,8 @@
  
- <?php     //adder-wrong.php
 
-if (isset($_POST['num1'])) {
-$num1 = $_POST['num1'];
-$num2 = $_POST['num2'];
-$myTotal = 0; 
-$myTotal -= $num1 + $Num2;
-
-echo '<h2>You added '. $num1 .' and ' .$num2. '</h2>';
-echo '<p> and the answer is <br><span style="color:red;">'.$myTotal.'!</span></p>';
-echo '<p><a href="">Reset page</a></p>';
-}
-
-?>
 
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <title>My Adder Assignment</title>
 <meta charset="UTF-8">
@@ -38,7 +25,7 @@ h2 {
 body {
     
     margin: 10px;
-    vertical-align: midle;
+    vertical-align: middle;
     background:lightblue;
 } 
 
@@ -68,19 +55,34 @@ p {
 <body>
 <h1>Adder.php</h1>
 <!-- <fieldset> -->
-<form action="" method="post">
+<form action="adder.php" method="post">
 <label>Enter the first number:</label>
-<input type="text" name="Num1"><br>
+<input type="number" name="num1"><br>
 
 <label>Enter the second number:</label>
-<input type="text" name="num2"><br>
+<input type="number" name="num2"><br>
 <input type="submit" value="Add Em!!"> 
 <!-- </fieldset> -->
 
  </form>
+ <?php     //adder-wrong.php
 
- <h2>You added 2 and 4</h2><p> and the answer is <br>
- 6!</p><p><a href="">Reset Page</a></p>
+if (isset($_POST['num1'], $_POST['num2'] )) {
+$num1 = intval($_POST['num1']);
+$num2 = intval($_POST['num2']);
+ $myTotal = $num1 + $num2;
+
+echo '<h2>You added '. $num1 .' and ' .$num2. '</h2>';
+echo '<p> and the answer is <br><style="color:red;">'.$myTotal.'!</p>';
+
+echo '<p><a href="">Reset page</a></p>';
+}
+
+?>
+
+
+ 
+<!-- </p><p><a href="">Reset Page</a></p> -->
 
 </body>
 </html>
