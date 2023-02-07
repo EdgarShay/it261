@@ -1,0 +1,93 @@
+/* styles for my currency 1 form */
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+body {
+    background: #ddd;
+}
+
+
+form {
+    max-width: 400px;
+    margin:20px auto;
+}
+
+
+fieldset {
+    padding:10px;
+}
+
+
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=number] {
+    width:100%;
+    height:30px;
+    margin-bottom:10px;
+}
+
+
+input[type=submit] {
+    margin-bottom:10px;
+}
+
+
+select {
+    display:block;
+    margin-bottom:10px;
+}
+
+
+
+form ul {
+    margin-bottom:10px;
+    list-style-type:none;
+}
+
+
+.box {
+    width:400px;
+    padding:10px;
+    margin:0 auto;
+}
+
+
+.error {
+    color:red;
+    font-style:italic;
+    text-align:center;
+}
+
+
+footer {
+    height:60px;
+    line-height: 60px;
+    background: #ddd;
+    clear:both;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
