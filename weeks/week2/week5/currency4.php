@@ -19,7 +19,7 @@
 
 
 body {
-    background: beige;
+    background: lightgray;
     vertical-align: middle;
 }
 
@@ -27,7 +27,7 @@ body {
 form {
     max-width: 400px;
     margin:20 px auto;
-    border: 1px solid red;
+    border: 1px solid black;
     /* vertical-align: middle; */
 }
 
@@ -112,27 +112,40 @@ footer li {
     margin:0 15px;
 }
 
-.line {
+/* .line {
     width:100%;
     height: 1px;
     background-color:red;
     margin-bottom:30px;
-}
+} */
 
 
-.video-container {
+/* .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 400px;
-}
+} */
 
 
-  .video {
-    width: 600px;
+.video {
+    width: 540px;
     height: 100%;
     object-fit: cover;
+    display: flex;
+    justify-content: center; 
 }
+
+
+h2 {
+    text-align:center;
+}
+
+
+p {
+    text-align:center;
+}
+
 
 
 .message {
@@ -143,15 +156,17 @@ footer li {
 
 
 .happy {
-    background-color: yellow;
-    color: black;
-}
+    display:block;
+    margin:0 auto;
+    width:560px;
+} 
 
 
 .sad {
-    background-color: grey;
-    color: white;
-}
+    display:block;
+    margin:0 auto;
+    width:560px;
+} 
 
 
 </style>
@@ -279,16 +294,31 @@ if(!empty($name && $email && $amount && $currency && $bank)) {
 echo '
 
 <div class="box">
-<fieldset>
-<h2>Hello '.$name.',</h2>
-<p>You now have <b> $'.number_format($dollars, 2).' American dollars</b> and it 
-will be deposited <b>in '.$bank.'</b> and we will email you at <b>
+
+<h2>Hello, '.$name.'</h2>
+<p>You now have $'.number_format($dollars, 2).' American Dollars 
+and it will be deposited in <b>'.$bank.'</b> and we will email you at <b>
 '.$email.'</b> in the next 24 hours!</p>
-</fieldset>
 </div>
-
-
 ';
+
+if($dollars >= 10000) {
+    echo "<div class='box happy'>
+      <h2> I am REALLY happy, because I have $$dollars American Dollars</h2>
+      <iframe width='560' height='370'
+      src='https://www.youtube.com/embed/O5APc0z49wg'>
+      </iframe>
+    </div>"; 
+  } else {
+    echo "<div class='box sad'>
+      <h2>I am NOT happy because I have $$dollars American Dollars</h2>
+      <iframe width='560' height='370'
+      src='https://www.youtube.com/embed/l5aZJBLAu1E'>
+      </iframe>
+    </div>";
+  }
+
+
 
 }
 
@@ -299,51 +329,14 @@ will be deposited <b>in '.$bank.'</b> and we will email you at <b>
 
 ?>
 
-<?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $mood = $_POST['mood'];
-    if ($mood == "happy") {
-      $video_url = "";
-      $message = "I am Really happy, bacause I have $6400 America Dollars!";
-    } else {
-      $video_url = "";
-      $message = "I am NOT happy, bacause I have $65 American dollars!";
-    }
-  } else {
-    $mood = "";
-  }
-?>
 
-
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-  <div>
-    <label for="mood">Mood:</label>
-    <select id="mood" name="mood">
-      <option value="happy" <?php if ($mood == "happy") echo "selected"; ?>>Happy</option>
-      <option value="sad" <?php if ($mood == "sad") echo "selected"; ?>>Sad</option>
-    </select>
-  </div>
-  <div>
-    <input type="submit" value="Submit">
-  </div>
-</form>
-
-<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') { ?>
-  <div class="video-container">
-    <video class="video" src="<?php echo $video_url; ?>" controls></video>
-  </div>
-
-  <div class="message <?php echo $mood; ?>">
-    <p><?php echo $message; ?></p>
-  </div>
-<?php } ?>
 
 
 
 <div class="line"> 
 </div>
 
-<footer>
+<!-- <footer>
 <ul>
         <li>Copyright &copy;
             2022</li>
@@ -357,7 +350,7 @@ will be deposited <b>in '.$bank.'</b> and we will email you at <b>
                 document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
                 document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
         </script>  
-</footer>
+</footer> -->
 
 
 

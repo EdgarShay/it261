@@ -6,10 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator form</title>
     <link href="css/styles.css" type="text/css" rel="stylesheet">
-</head>
-<body>
+<style>
 
 
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+body {
+    background: #ddd;
+}
+
+
+h2 {
+    text-align:center;
+}
+
+
+p {
+    text-align:center;
+}
+
+
+
+form {
+    max-width: 400px;
+    margin:20px auto;
+}
+
+
+fieldset {
+    padding:10px;
+}
+
+
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+
+input[type=text],
+input[type=miles],
+input[type=speed],
+input[type=hours] {
+    width:100%;
+    height:30px;
+    margin-bottom:10px;
+}
+
+
+input[type=submit] {
+    margin-bottom:10px;
+}
+
+
+select {
+    display:block;
+    margin-bottom:10px;
+}
+
+
+
+form ul {
+    margin-bottom:10px;
+    list-style-type:none;
+}
+
+
+.box {
+    width:400px;
+    padding:10px;
+    margin:0 auto;
+}
+
+
+.error {
+    color:red;
+    font-style:italic;
+    text-align:center;
+}
+
+
+footer {
+    height:60px;
+    line-height: 60px;
+    /* background: #ddd; */
+    clear:both;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
+
+</style>
+
+
+
+<h2> My Travel Calculator</h2>
 <!-- https://www.geeksforgeeks.org/how-to-prevent-xss-with-html-php/ -->
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
 <fieldset>
@@ -32,16 +141,16 @@ echo htmlspecialchars($_POST['hours']) ;?>">
 <!-- time for our radio buttom that has an additional attribute of value -->
 <label>Price of gas</label>
 <ul>
-<li><input type="radio" name="currency" value="0.017" <?php  
-if(isset($_POST['currency']) && $_POST['currency'] == 0.017) 
+<li><input type="radio" name="price" value="3.00" <?php  
+if(isset($_POST['price']) && $_POST['price'] == 3.00) 
 echo 'checked="checked"' ;?>> $3.00 </li>
 
-<li><input type="radio" name="currency" value="0.76" <?php  
-if(isset($_POST['currency']) && $_POST['currency'] == 0.76) 
+<li><input type="radio" name="price" value="3.50" <?php  
+if(isset($_POST['price']) && $_POST['price'] == 3.50) 
 echo 'checked="checked"' ;?>> $3.50 </li>
 
-<li><input type="radio" name="currency" value="1.15" <?php  
-if(isset($_POST['currency']) && $_POST['currency'] == 1.15) 
+<li><input type="radio" name="price" value="4.00" <?php  
+if(isset($_POST['price']) && $_POST['price'] == 4.00) 
 echo 'checked="checked"' ;?>> $4.00 </li>
 
 </ul>
@@ -63,9 +172,9 @@ echo 'selected ="selected"' ;?>>11 - 15 mpg</option>
 
 </select>
 
-<input type="submit" value="Convert it">
+<input type="submit" value="Calculate">
 
-<p><a href="">Reset it!</a></p>
+<p><a href="">Reset</a></p>
 
 </fieldset>
 

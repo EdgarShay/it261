@@ -28,7 +28,6 @@ form {
     max-width: 400px;
     margin:20 px auto;
     border: 1px solid red;
-    /* vertical-align: middle; */
 }
 
 
@@ -94,10 +93,10 @@ form ul {
 footer {
     height:60px;
     line-height: 60px;
-    background: #ddd;
+    /* background: #ddd; */
     clear:both;
-    padding:top;
-    margin-bottom:40px;
+    /* padding-top:40px; */
+    
 }
 
 
@@ -117,55 +116,58 @@ footer li {
     width:100%;
     height: 1px;
     background-color:red;
-    margin-bottom:30px;
+    margin-top:30px;
 }
 
 
-.video-container {
+/* .video-container { */
     /* display: flex; */
-    /* justify-content: center; */
+    /* justify-content: center;  */
     /* align-items: center; */
-    height: 500px;
-    position:relative;
-    margin: 0 auto;
-    width:600px;
-    background: yellow;
-    
-}
+    /* height: 500px; */
+    /* position:relative; */
+    /* margin: 0 auto; */
+    /* width:700px; */
+    /* background: yellow; */
+/* }  */
+
+ 
 
 
-  .video {
-    width: 600px;
-    /* height: 100%; */
-    /* object-fit: cover; */
+
+.iframe { 
     position:absolute;
-    top: 100px;
-}
+    width: 540px; 
+    height:370px;
+    bottom:10px;
+}  
 
 
-.message {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
+h2 {
+    text-align: center; 
+    font-size: 25px;
+    margin-top: 10px;
 }  
 
 
 .happy {
     background-color: yellow;
     color: black;
+    width:560px;
+    height:460px;
 }
 
 
 .sad {
     background-color: grey;
     color: white;
+    width:560px;
+    height:460px;
 }
 
 
 </style>
 
-</head>
-<body>
 
 
 <!-- https://www.geeksforgeeks.org/how-to-prevent-xss-with-html-php/ -->
@@ -243,6 +245,7 @@ echo 'selected ="selected"' ;?>>Boeing Credit Union</option>
 
 </form> 
 
+
 <?php
 // we will start with the server request method
 // then, we will ask ourselves if any fields are empty
@@ -282,22 +285,40 @@ $currency =floatval($_POST['currency']);
 $bank = $_POST['bank'];
 $dollars = $amount * $currency;
 
+
 if(!empty($name && $email && $amount && $currency && $bank)) {
 
 echo '
 
-
 <div class="box">
 <fieldset>
 <h2>Hello '.$name.',</h2>
-<p>You now have <b> $'.number_format($dollars, 2).' American dollars</b> and it 
-will be deposited <b>in '.$bank.'</b> and we will email you at <b>
+<p>You now have <b> $'.number_format($dollars, 2).' American dollars</b> 
+and it will be deposited <b>in '.$bank.'</b> and we will email you at <b>
 '.$email.'</b> in the next 24 hours!</p>
 </fieldset>
 </div>
-
-
 ';
+
+if($dollars >= 5000) {
+    echo "<div class='box happy'>
+      <h2> I am REALLY happy, because I have $$dollars American Dollars</h2>
+      
+      <iframe width='540' height='370'
+      src='https://www.youtube.com/embed/O5APc0z49wg'>
+      </iframe>
+      
+    </div>"; 
+  } else {
+    echo "<div class='box sad'>
+      <h2>I am NOT happy because I have $$dollars American Dollars</h2>
+       
+        <iframe width='540' height='370'
+        src='https://www.youtube.com/embed/l5aZJBLAu1E'>
+        </iframe>
+      
+    </div>";
+  }
 
 }
 
@@ -307,44 +328,6 @@ will be deposited <b>in '.$bank.'</b> and we will email you at <b>
 } // end server request
 
 ?>
-
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$mood = $_POST['mood'];
-    if ($mood == "happy") {
-      $video_url = "";
-      $message = "I am Really happy, bacause I have $6400 America Dollars!";
-    } else {
-      $video_url = "";
-      $message = "I am NOT happy, bacause I have $65 American dollars!";
-    }
-  } else {
-    $mood = "sad";
-  }
-?>
-
-
-<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-  <div> 
-    <label for="mood">Mood:</label> 
-    <select id="mood" name="mood"> 
-    <option value="happy" <?php if ($mood == "happy") echo "selected"; ?>>Happy</option> 
-     <option value="sad" <?php if ($mood == "sad") echo "selected"; ?>>Sad</option> 
-    </select> 
-  </div>
-  <div> 
-    <input type="submit" value="Submit"> 
-  </div> 
-</form>
-<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') { ?>
-  <div class="video-container">
-    <video class="video" src="<?php echo $video_url; ?>" controls></video>
-  </div>
-  <div class="message <?php echo $mood; ?>">
-    <p><?php echo $message; ?></p>
-  </div>
-<?php } ?>
 
 
 

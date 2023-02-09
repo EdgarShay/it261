@@ -6,10 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator form</title>
     <link href="css/styles.css" type="text/css" rel="stylesheet">
-</head>
-<body>
+<style>
 
 
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+
+body {
+    background: #ddd;
+}
+
+
+h2 {
+    text-align:center;
+}
+
+
+p {
+    text-align:center;
+}
+
+
+
+form {
+    max-width: 400px;
+    margin:20px auto;
+}
+
+
+fieldset {
+    padding:10px;
+}
+
+
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+
+input[type=text],
+input[type=miles],
+input[type=speed],
+input[type=hours] {
+    width:100%;
+    height:30px;
+    margin-bottom:10px;
+}
+
+
+input[type=submit] {
+    margin-bottom:10px;
+}
+
+
+select {
+    display:block;
+    margin-bottom:10px;
+}
+
+
+
+form ul {
+    margin-bottom:10px;
+    list-style-type:none;
+}
+
+
+.box {
+    width:400px;
+    padding:10px;
+    margin:0 auto;
+}
+
+
+.error {
+    color:red;
+    font-style:italic;
+    text-align:center;
+}
+
+
+footer {
+    height:60px;
+    line-height: 60px;
+    /* background: #ddd; */
+    clear:both;
+}
+
+
+footer ul {
+    display:flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+footer li {
+    justify-content: center;
+    margin:0 15px;
+}
+
+
+</style>
+
+
+
+<h2> My Travel Calculator</h2>
 <!-- https://www.geeksforgeeks.org/how-to-prevent-xss-with-html-php/ -->
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
 <fieldset>
@@ -18,8 +127,8 @@
 echo htmlspecialchars($_POST['name']) ;?>">
 
 <label>Total miles driving?</label>
-<input type="distance" name="distance" value="<?php if(isset($_POST['distance'])) 
-echo htmlspecialchars($_POST['distance']) ;?>">
+<input type="miles" name="miles" value="<?php if(isset($_POST['miles'])) 
+echo htmlspecialchars($_POST['miles']) ;?>">
 
 <label>How fast do you typically drive?</label>
 <input type="speed" name="speed" value="<?php if(isset($_POST['speed'])) 
@@ -34,56 +143,38 @@ echo htmlspecialchars($_POST['hours']) ;?>">
 <ul>
 <li><input type="radio" name="currency" value="0.017" <?php  
 if(isset($_POST['currency']) && $_POST['currency'] == 0.017) 
-echo 'checked="checked"' ;?>> Rubles </li>
+echo 'checked="checked"' ;?>> $3.00 </li>
 
 <li><input type="radio" name="currency" value="0.76" <?php  
 if(isset($_POST['currency']) && $_POST['currency'] == 0.76) 
-echo 'checked="checked"' ;?>> Canadian Dollars </li>
+echo 'checked="checked"' ;?>> $3.50 </li>
 
 <li><input type="radio" name="currency" value="1.15" <?php  
 if(isset($_POST['currency']) && $_POST['currency'] == 1.15) 
-echo 'checked="checked"' ;?>> Pounds </li>
+echo 'checked="checked"' ;?>> $4.00 </li>
 
-<li><input type="radio" name="currency" value="1.00" <?php  
-if(isset($_POST['currency']) && $_POST['currency'] == 1.00) 
-echo 'checked="checked"' ;?>> Euros </li>
-
-<li><input type="radio" name="currency" value="0.0074" <?php  
-if(isset($_POST['currency']) && $_POST['currency'] == 0.0074) 
-echo 'checked="checked"' ;?>> Yen </li>
 </ul>
 
 <label>Fuel efficiency</label>
 
-<select name="bank">
-<option value=""NULL <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == NULL) 
+<select name="efficiency">
+<option value=""NULL <?php if(isset($_POST['efficiency']) 
+&& $_POST['efficiency'] == NULL) 
 echo 'selected ="unselected"' ;?>>Select one!</option>
 
-<option value="boa" <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == 'boa') 
-echo 'selected ="selected"' ;?>>Bank Of America</option>
+<option value="10 mpg or less" <?php if(isset($_POST['efficiency']) 
+&& $_POST['efficiency'] == '10 mpg or less') 
+echo 'selected ="selected"' ;?>>10 mpg or less</option>
 
-<option value="chase" <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == 'chase') 
-echo 'selected ="selected"' ;?>>Chase Bank</option>
+<option value="11 - 15 mpg" <?php if(isset($_POST['efficiency']) 
+&& $_POST['efficiency'] == '11 - 15 mpg') 
+echo 'selected ="selected"' ;?>>11 - 15 mpg</option>
 
-<option value="banner" <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == 'banner') 
-echo 'selected ="selected"' ;?>>Banner Bank</option>
-
-<option value="wells fargo" <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == 'wells fargo') 
-echo 'selected ="selected"' ;?>>Wells Fargo</option>
-
-<option value="becu" <?php if(isset($_POST['bank']) 
-&& $_POST['bank'] == 'becu') 
-echo 'selected ="selected"' ;?>>Boeing Credit Union</option>
 </select>
 
-<input type="submit" value="Convert it">
+<input type="submit" value="Calculate">
 
-<p><a href="">Reset it!</a></p>
+<p><a href="">Reset</a></p>
 
 </fieldset>
 
@@ -97,25 +188,29 @@ echo 'selected ="selected"' ;?>>Boeing Credit Union</option>
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if(empty($_POST['name'])) {
-    echo '<p class="error">Please fill out your name!</p>';
+echo '<p class="error">Please fill out your name!</p>';
+}
+    
+if(empty($_POST['miles'])) {
+echo '<p class="error">Please fill out your total driving miles</p>';
+}
+    
+if(empty($_POST['speed'])) {
+echo '<p class="error">Please fill out how fast will you be driving</p>';
+}
+    
+if(empty($_POST['hours'])) {
+echo '<p class="error">How many hours per day would you like to drive?</p>';
+}
+ 
+if(empty($_POST['price'])) {
+echo '<p class="error">Your cost of gas, please!</p>';
 }
 
-if(empty($_POST['email'])) {
-    echo '<p class="error">Please fill out your email!</p>';
+if($_POST['efficiency'] == NULL) {
+echo '<p class="error">Please select your car/s efficiency</p>';
 }
-
-if(empty($_POST['amount'])) {
-    echo '<p class="error">Please fill out your amount!</p>';
-}
-
-if(empty($_POST['currency'])) {
-    echo '<p class="error">Please check your currency!</p>';
-}
-
-if($_POST['bank'] == NULL) {
-    echo '<p class="error">Please choose your banking institution!</p>';
-}
-
+    
 if(isset($_POST['name'],
 $_POST['email'],
 $_POST['amount'],
@@ -127,27 +222,52 @@ $amount =floatval($_POST['amount']);
 $currency =floatval($_POST['currency']);
 $bank = $_POST['bank'];
 $dollars = $amount * $currency;
-
+    
+    
 if(!empty($name && $email && $amount && $currency && $bank)) {
-
+    
 echo '
+    
 <div class="box">
+<fieldset>
 <h2>Hello '.$name.',</h2>
-<p>You now have <b> $'.number_format($dollars, 2).' American dollars</b> and we 
-will be emailing you at <b>'.$email.' with your information, as well 
-as depositing your funds at <b> '.$bank.' bank!</b></p>
-
-
+<p>You now have <b> $'.number_format($dollars, 2).' American dollars</b> 
+and it will be deposited <b>in '.$bank.'</b> and we will email you at <b>
+'.$email.'</b> in the next 24 hours!</p>
+</fieldset>
 </div>
-
 ';
-
+    
+if($dollars >= 1000) {
+echo "<div class='box happy'>
+<h2> I am REALLY happy, because I have $$dollars American Dollars</h2>
+          
+<iframe width='540' height='370'
+    src='https://www.youtube.com/embed/O5APc0z49wg'>
+        </iframe>
+          
+    </div>"; 
+} else {
+    echo "<div class='box sad'>
+    <h2>I am NOT happy because I have $$dollars American Dollars</h2>
+           
+    <iframe width='540' height='370'
+        src='https://www.youtube.com/embed/l5aZJBLAu1E'>
+        </iframe>
+          
+    </div>";
 }
-
-
+    
 }
-
+    
+    
+}
+    
 } // end server request
+    
+
+
+
 
 ?>
 
