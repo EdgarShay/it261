@@ -92,7 +92,7 @@ echo '
 <div class="box">
 <h2>Hello '.$name.'</h2>
 <p>You now have <b> $'.floor($dollars).' American dollars</b> and we 
-will be emailing you at <b>'.$email.' with your information, as well 
+will be emailing you at <b>'.$email.'</b> with your information, as well 
 as depositing your funds at <b> '.$bank.' bank!</b></p>
 
 
