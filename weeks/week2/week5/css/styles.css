@@ -74,7 +74,7 @@ form ul {
 footer {
     height:60px;
     line-height: 60px;
-    background: #ddd;
+    /* background: #ddd; */
     clear:both;
 }
 
