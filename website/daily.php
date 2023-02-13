@@ -1,13 +1,16 @@
-<?php include('./includes/header.php'); ?>
+<?php 
+include('config.php');
+include('./includes/header.php'); ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Page</title>
-    <style>
+
+<!-- <!DOCTYPE html>  -->
+<!-- <html lang="en"> -->
+<!-- <head>  -->
+    <!-- <meta charset="UTF-8">  -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Daily Page</title>  -->
+    <!-- <style>
 * {
     padding:0;
     margin:0;
@@ -43,10 +46,10 @@ aside {
     float:right;
 }
 
-</style>
+</style>   -->
 
-</head>
-<body> 
+<!-- </head> -->
+<!-- <body>  -->
 <div id="wrapper">
 
 <!-- <div id="hero">
@@ -179,14 +182,13 @@ nulla pariatur.</p> -->
         <img src="images/html5.png" alt="HTML 5 logo">
         </a></li>
     </ul>
+
     
 </footer> -->
 <!--end wrapper-->
 </div> 
-</body>
-</html>
+<!-- </body> -->
+<!-- </html> -->
 
-<?php
-include('./includes/footer.php');
-
+<?php include('./includes/footer.php'); 
 
