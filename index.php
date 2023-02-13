@@ -99,8 +99,10 @@ The other passion is to working out in the gym.  </p>
 
 <h3>Week 6</h3>
 <ol>
-<li><a href="weeks/week6/form1.php">form1.php</a></li>
+<li><a href="weeks/week6/form.php">form.php</a></li>
+<li><a href="weeks/week6/form2.php">form2.php</a></li>
 <li><a href="weeks/week6/functions.php">functions.php</a></li>
+<li><a href="weeks/week6/thx.php">thx.php</a></li>
 <li><a href="weeks/week6/implode.php">implode.php</a></li>
 </ol>
 
