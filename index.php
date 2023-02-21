@@ -108,8 +108,9 @@ The other passion is to working out in the gym.  </p>
 
 <h3>Week 7</h3>
 <ol>
+<li><a href="weeks/week7/form3.php">form3.php</a></li>   
 <li><a href="weeks/week7/pictures.php">pictures.php</a></li>
-<li><a href="weeks/week7/random.php">ramdom.php</a></li>
+<li><a href="weeks/week7/rand.php">rand.php</a></li>
 <li><a href="weeks/week7/strings.php">strings.php</a></li>
 </ol>
 
