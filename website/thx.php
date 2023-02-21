@@ -51,6 +51,8 @@ form {
     max-width: 500px;
     margin:20 px auto;
     /* border: 1px solid red; */
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -382,7 +384,7 @@ $_POST['comments'],
 $_POST['privacy'])) {
 
 
-$to = 'edgarshay23@gmail.com.';
+$to = 'szemeo@mystudentswa.com.';
 $subject = 'Test Email on ' .date('m/d/y, h i A');
 $body = '
 Name : '.$name.'  '.PHP_EOL.'

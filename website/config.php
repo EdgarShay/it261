@@ -310,7 +310,7 @@ Comments : '.$comments.'  '.PHP_EOL.'
 
 
 $headers = array(
-'From' => 'noreply@mystudentswa.com'
+'From' => 'edgarshay23@gmail.com'
 );
 
 
@@ -318,7 +318,7 @@ if(!empty($first_name &&
 $last_name && 
 $email && 
 $gender && 
-$phone&& 
+$phone && 
 $regions && 
 $wines && 
 $comments)) {
