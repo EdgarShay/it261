@@ -31,7 +31,7 @@ header {
 main {
     width:62%;
     /* height:400px; */
-    background:lightsalmon;
+    background:lightblue;
     float:left;
 }
 
@@ -43,6 +43,82 @@ aside {
     background:lightgreen;
     float:right;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+form {
+    max-width: 500px;
+    margin:20px auto;
+    /* border: 1px solid red; */
+    
+}
+
+
+fieldset {
+    padding:10px;
+    border:1px solid black;
+    max-width: 500px;
+    padding-bottom:20px;
+    
+}
+
+
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+
+input[type=number] 
+input[type=text],
+input[type=email] {
+    width:100%;
+    height:30px;
+    margin-bottom:10px;
+}
+
+
+input[type=submit] {
+    margin-bottom:10px;
+}
+
+
+
+select {
+    display:block;
+    margin-bottom:10px;
+}
+
+
+
+form ul {
+    margin-bottom:10px;
+    list-style-type:none;
+}
+
+
+.error {
+    color:red;
+    font-style:italic;
+    text-align:center;
+}
+
+
+legend {
+    text-align:center;
+    font-size:1.5em;
+}
+
 
 </style>  
 
@@ -76,16 +152,9 @@ aside {
 <ul>
 <?php
 
-echo make_links($nav);
 
 
-
-
-
-
-
-
-
+    echo make_links($nav);
 
 
 
