@@ -183,26 +183,22 @@ break;
 
 // my form's php
 
-
-
-$first_name = '';
-$last_name = '';
+$name = '';
 $email = '';
 $phone = '';
-$wines = '';
-$gender = '';
+$tequila = '';
+$pick_your_day = '';
 $regions = '';
 $privacy = '';
 $comments = '';
 
 
 
-$first_name_err = '';
-$last_name_err = '';
+$name_err = '';
 $email_err = '';
 $phone_err = '';
-$wines_err = '';
-$gender_err = '';
+$tequila_err = '';
+$pick_your_day_err = '';
 $regions_err = '';
 $privacy_err = '';
 $comments_err = '';
@@ -211,16 +207,10 @@ $comments_err = '';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-if(empty($_POST['first_name'])) {
-$first_name_err = 'Please fill out your first name';
+if(empty($_POST['name'])) {
+$name_err = 'Please fill out your name';
 } else {   
-$first_name = $_POST['first_name'];
-}
-
-if(empty($_POST['last_name'])) {
-$last_name_err = 'Please fill out your last name';
-} else {   
-$last_name = $_POST['last_name'];
+$name = $_POST['name'];
 }
 
 if(empty($_POST['email'])) {
@@ -229,10 +219,10 @@ $email_err = 'Please fill out your email so that we can span you!';
 $email = $_POST['email'];
 }
 
-if(empty($_POST['gender'])) {
-$gender_err = 'Please choose your gender';
+if(empty($_POST['pick_your_day'])) {
+$pick_your_day_err = 'Please find your favorite day';
 } else {   
-$gender = $_POST['gender'];
+$pick_your_day = $_POST['pick_your_day'];
 }
 
 if(empty($_POST['phone'])) {
@@ -241,10 +231,10 @@ $phone_err = 'Please fill out your phone number';
 $phone = $_POST['phone'];
 }
     
-if(empty($_POST['wines'])) {
-$wines_err = 'what, no wines?';
+if(empty($_POST['tequila'])) {
+$tequila_err = 'wow, no tequila yet?';
 } else {   
-$wines = $_POST['wines'];
+$tequila = $_POST['tequila'];
 }
       
 if(empty($_POST['comments'])) {
@@ -267,15 +257,15 @@ $regions = $_POST['regions'];
 
 // wines function 
 
-function my_wines($wines) {
+function my_tequila($tequila) {
 $my_return = '';
 
-if(!empty($POST['wines'])) {
-$my_return = implode(', ', $_POST['wines']);
+if(!empty($POST['tequila'])) {
+$my_return = implode(', ', $_POST['tequila']);
 
 
 } else {
-    $wines_err = 'Please fill out your wines!';
+    $tequila_err = 'Please choose your favorite tequila!';
 }
 
 return $my_return;
@@ -284,28 +274,26 @@ return $my_return;
 } // function
 
 
-if(isset($_POST['first_name'],
-$_POST['last_name'],
+if(isset($_POST['name'],
 $_POST['email'],
-$_POST['gender'],
+$_POST['pick_your_day'],
 $_POST['phone'],
-$_POST['wines'],
+$_POST['tequila'],
 $_POST['regions'],
 $_POST['comments'],
 $_POST['privacy'])) {
 
 
-$to = 'edgarshay23@gmail.com.';
+$to = 'szemeo@mystudentswa.com.';
 $subject = 'Test Email on ' .date('m/d/y, h i A');
 $body = '
-First Name : '.$first_name.'  '.PHP_EOL.'
-Last Name : '.$last_name.'  '.PHP_EOL.'
-Email : '.$email.'  '.PHP_EOL.'
-Gender : '.$gender.'  '.PHP_EOL.'
-Phone : '.$phone.'  '.PHP_EOL.'
-Region : '.$regions.'  '.PHP_EOL.'
-Wines : '.my_wines($wines).' '.PHP_EOL.'
-Comments : '.$comments.'  '.PHP_EOL.'
+Name : '.$name.'  .PHP_EOL.
+Email : '.$email.'  .PHP_EOL.
+Pick_your_day : '.$pick_your_day.'  .PHP_EOL.
+Phone : '.$phone.'  .PHP_EOL.
+Regions : '.$regions.'  .PHP_EOL.
+Tequila : '.my_Tequila($tequila).' .PHP_EOL.
+Comments : '.$comments.'  .PHP_EOL.
 ';
 
 
@@ -314,13 +302,12 @@ $headers = array(
 );
 
 
-if(!empty($first_name && 
-$last_name && 
+if(!empty($name && 
 $email && 
-$gender && 
+$pick_your_day && 
 $phone && 
 $regions && 
-$wines && 
+$tequila && 
 $comments)) {
 
 
@@ -337,4 +324,4 @@ header('Location:thx.php');
 
 
 }  // ende server request method
-
+?>

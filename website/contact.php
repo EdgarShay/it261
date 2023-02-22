@@ -3,7 +3,7 @@ include('config.php');
 include('./includes/header.php'); ?>
 
 
-<!DOCTYPE html>  
+<!-- <!DOCTYPE html>  
 <html lang="en"> 
  <head>  
     <meta charset="UTF-8">  
@@ -69,7 +69,7 @@ label {
     font-weight:bold;
 }
 
-/* input[type=number] */
+input[type=number] 
 input[type=text],
 input[type=email] {
     width:100%;
@@ -118,7 +118,7 @@ legend {
 
 
 
-</style> 
+</style>  -->
 
 
 
@@ -278,151 +278,8 @@ echo $_SERVER['PHP_SELF']  ;?>'" value="Reset">
 
 
 
-<?php
-// my form's php
-
-$name = '';
-$email = '';
-$phone = '';
-$tequila = '';
-$pick_your_day = '';
-$regions = '';
-$privacy = '';
-$comments = '';
 
 
-
-$name_err = '';
-$email_err = '';
-$phone_err = '';
-$tequilas_err = '';
-$pick_your_day_err = '';
-$regions_err = '';
-$privacy_err = '';
-$comments_err = '';
-
-
-
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-if(empty($_POST['name'])) {
-$name_err = 'Please fill out your name';
-} else {   
-$name = $_POST['name'];
-}
-
-if(empty($_POST['email'])) {
-$email_err = 'Please fill out your email so that we can span you!';
-} else {   
-$email = $_POST['email'];
-}
-
-if(empty($_POST['pick_your_day'])) {
-$pick_your_day_err = 'Please find your favorite day';
-} else {   
-$pick_your_day = $_POST['pick_your_day'];
-}
-
-if(empty($_POST['phone'])) {
-$phone_err = 'Please fill out your phone number';
-} else {   
-$phone = $_POST['phone'];
-}
-    
-if(empty($_POST['tequila'])) {
-$tequila_err = 'wow, no tequila yet?';
-} else {   
-$tequila = $_POST['tequila'];
-}
-      
-if(empty($_POST['comments'])) {
-$comments_err = 'Please share your thoughts with us';
-} else {   
-$comments = $_POST['comments'];
-}
-          
-if(empty($_POST['privacy'])) {
-$privacy_err = 'Please agree to our privacy policy';
-} else {   
-$privacy = $_POST['privacy'];
-}
-
-if($_POST['regions'] == NULL) {
-$regions_err = 'Please select your region!';
-} else {
-$regions = $_POST['regions']; 
-}
-
-// wines function 
-
-function my_tequila($tequila) {
-$my_return = '';
-
-if(!empty($POST['tequila'])) {
-$my_return = implode(', ', $_POST['tequila']);
-
-
-} else {
-    $tequila_err = 'Please choose your favorite tequila!';
-}
-
-return $my_return;
-
-
-} // function
-
-
-if(isset($_POST['name'],
-$_POST['email'],
-$_POST['pick_your_day'],
-$_POST['phone'],
-$_POST['tequila'],
-$_POST['regions'],
-$_POST['comments'],
-$_POST['privacy'])) {
-
-
-$to = 'edgarshay23@gmail.com.';
-$subject = 'Test Email on ' .date('m/d/y, h i A');
-$body = '
-Name : '.$name.'  '.PHP_EOL.'
-Email : '.$email.'  '.PHP_EOL.'
-Pick_your_day : '.$pick_your_day.'  '.PHP_EOL.'
-Phone : '.$phone.'  '.PHP_EOL.'
-Regions : '.$regions.'  '.PHP_EOL.'
-Tequila : '.my_Tequilas($tequilas).' '.PHP_EOL.'
-Comments : '.$comments.'  '.PHP_EOL.'
-';
-
-
-$headers = array(
-'From' => 'edgarshay23@gmail.com'
-);
-
-
-if(!empty($name && 
-$email && 
-$pick_your_day && 
-$phone && 
-$regions && 
-$tequilas && 
-$comments)) {
-
-
-
-mail($to, $subject, $body, $headers);
-header('Location:thx.php');
-
-}
-
-
-}  // end isset
-
-
-
-
-}  // ende server request method
-?>
 
  
 
