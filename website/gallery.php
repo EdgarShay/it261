@@ -1,5 +1,5 @@
 <?php
-$people['Carmelo_Anthony'] = 'antho_Basketball Player NBA ALL-Star .';
+$people['Carmelo_Anthony'] = 'antho_Basketball Player NBA ALL-Star.';
 $people['Blake_Griffin'] = 'griff_Basketball Player Named Player of the year.';
 $people['Derrick_Roses'] = 'roses_Basketball Player He Played with NY Nicks.';
 $people['Juan_Toscano'] = 'tosca_Basketball Player With Utta Jazz.';
@@ -49,8 +49,10 @@ td {
 alt="<?php echo str_replace('_', ' ', $name)     ;?>" ></td>
 <td><?php echo str_replace('_', ' ', $name)     ;?></td>
 <td><?php echo substr($people[$name], strpos($people[$name], '_') + 1)     ;?></td>
+<td><img src="images/<?php echo substr($image, 0, 5);?>_2.jpg" 
+alt="<?php echo str_replace('_', ' ', $name);?>"></td>
 </tr>
 <?php endforeach ; ?>
 </table>
 </body>
-</html>
+</html
