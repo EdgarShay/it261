@@ -95,6 +95,7 @@ if($rows['email'] == $email) {
 
 if(count($errors) == 0 ) {
 
+// remember you change password_1
 $password = md5($password_1);
 
 // Now is time to insert the information into our table
@@ -122,7 +123,7 @@ header('Location:login.php');
 
 } // end if isset reg_user
 
-// NO, we must comunicate with the login page - we will ask
+// NOw, we must comunicate with the login page - we will ask
 // the same question!!!!
 
 if(isset($_POST['login_user'])) {
@@ -143,9 +144,9 @@ if(empty($password)) {
 
 if(count($errors) == 0 ) {
 
-    $password = md5($password);
+$password = md5($password);
     
-$query = "SELECT * FROM user WHERE username = '$username' AND password
+$query = "SELECT * FROM users WHERE username = '$username' AND password
 = '$password' ";
 // below you have a new variable that is results NOT result
 $results = mysqli_query($iConn, $query);
@@ -178,3 +179,8 @@ array_push($errors, 'Wrong username/password combination');
 
 
 } // close isset login user
+
+
+
+?>
+
