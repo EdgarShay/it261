@@ -245,43 +245,53 @@ echo htmlspecialchars($_POST['phone_number']) ;?>">
     wines when we are adding the sticky part of our form -->
 <li>
 <input type="checkbox" name="activities[]" value="surf" <?php if(isset($_POST['activities'])
-&& in_array('surf', $activities)) echo 'checked = "checked"'  ;?>>Surf
+&& is_array($_POST['activities']) && in_array('surf', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Surf
 </li>
 
 <li>
-<input type="checkbox" name="activities[]" value="horseback_riding_tour " <?php if(isset($_POST['activities'])
-&& in_array('horseback_riding_tour', $activities)) echo 'checked = "checked"'  ;?>>Horseback Riding Tour
+<input type="checkbox" name="activities[]" value="horseback_riding_tour" <?php if(isset($_POST['activities'])
+&& is_array($_POST['activities']) && in_array('horseback_riding_tour', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Horseback Riding Tour
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="combo_aventure_tour" <?php if(isset($_POST['activities'])
-&& in_array('combo_aventure_tour', $activities)) echo 'checked = "checked"'  ;?>>Combo Aventure Tour
+&& is_array($_POST['activities']) && in_array('combo_aventure_tour', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Combo aventure tour
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="wine_beer_tours" <?php if(isset($_POST['activities'])
-&& in_array('wine_beer_tours', $activities)) echo 'checked = "checked"'  ;?>>Wine Beer Tours
+&& is_array($_POST['activities']) && in_array('wine_beer_tours', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Wine beer Tours
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="canopy_river_zipline" <?php if(isset($_POST['activities'])
-&& in_array('canopy_river_zipline', $activities)) echo 'checked = "checked"'  ;?>>Canopy River Zipline
+&& is_array($_POST['activities']) && in_array('canopy_river_zipline', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Canopy River Zipline
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="scuba_diving" <?php if(isset($_POST['activities'])
-&& in_array('scuba_diving', $activities)) echo 'checked = "checked"'  ;?>>Scuba Diving
+&& is_array($_POST['activities']) && in_array('scuba_diving', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Scuba Diving
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="snorkeling" <?php if(isset($_POST['activities'])
-&& in_array('snorkeling', $activities)) echo 'checked = "checked"'  ;?>>Snorkeling
+&& is_array($_POST['activities']) && in_array('snorkeling', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Snorkeling
 </li>
 
 <li>
 <input type="checkbox" name="activities[]" value="swimming_with_dolphins" <?php if(isset($_POST['activities'])
-&& in_array('swimming_with_dolphins', $activities)) echo 'checked = "checked"'  ;?>>Swimming With Dolphins
+&& is_array($_POST['activities']) && in_array('swimming_with_dolphins', $_POST['activities'])) 
+echo 'checked="checked"'; ?>>Swimming With Dolphins
 </li>
+
+<!-- I fixed the checkbox -->
 </ul>
 <span class="error"><?php echo $experiences_err ;?></span>
 

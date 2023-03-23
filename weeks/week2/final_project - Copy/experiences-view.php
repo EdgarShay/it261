@@ -71,7 +71,7 @@ echo '
 
 
 <aside>
-<h3>This is my Aside</h3>
+<h3>Explore Local Culture</h3>
 <figure>
 <img src="./images/experiences<?php echo $id;?>.jpg" 
 alt="<?php echo $activities_name;?>">
