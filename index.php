@@ -35,13 +35,12 @@ Assignments. </h2>
 <h2>About Edgar</h2>
 <img class="right" src="images/edgar.jpg" alt="My-image">
 
-<p>Hello my name is Edgar Vargas. I moved to Seattle from Puerto Vallarta, Mexico 
-almost eight years ago. My first language is Spanish. This is my fifth Web Develepment class
-here at Seattle Central College. I have a wobnderful wife and a handsome boy.
-My goal is to earn my certificate in Web Development and eventually get my degree
-in Computer Science. By gaining experience and skills, I plan to grow my career. 
-Besides my education I have two real passions. The first is spending time with my wife and son.
-The other passion is to working out in the gym.  </p>
+<p>Hello my name is Edgar. I moved to Seattle almost eight years ago. 
+This is my fifth Web Develepment class
+here at Seattle College. I have a beautiful family. My goal is to earn my certificate in Web Development 
+and eventually get my degree in Computer Science. By gaining experience and skills, 
+I plan to grow my career. Besides my education I have two real passions.
+The first is spending time with my wife and son. The other passion is to working out in the gym.  </p>
 <div class="container">
 <img class="left" src="images/screenshot.jpg" alt="MAMP">
 <img class="left" src="images/screenshot.2.jpg" alt="MAMP-display-errors">
